@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado - Transcripción</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Transcripción de {{ filename }}</h1>
+        <ul>
+            {% for segment in segments %}
+                <li><strong>[{{ segment['start'] | round(1) }} - {{ segment['end'] | round(1) }}]</strong> {{ segment['text'] }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/">⬅️ Transcribir otro archivo</a>
+    </div>
+</body>
+</html>
